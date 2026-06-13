@@ -1,0 +1,16 @@
+[
+{
+    "modid": "fallingleaves",
+    "name": "Falling Leaves",
+    "description": "Spawns gently falling leaf particles below leaf blocks, with wind simulation and per-block texture-color tinting. Client-side cosmetic mod.",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "https://github.com/Cheaterpaul/fallingleaves",
+    "updateUrl": "",
+    "authorList": ["Cheaterpaul", "Fourmisain", "BrekiTomasson", "RandomMcSomethin (Fabric original)", "XY (1.12.2 port)"],
+    "credits": "Original Fabric mod by Fourmisain et al.; Forge port by Cheaterpaul.",
+    "logoFile": "logo.png",
+    "screenshots": [],
+    "dependencies": []
+}
+]
