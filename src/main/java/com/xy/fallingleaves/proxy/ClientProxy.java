@@ -1,6 +1,7 @@
 package com.xy.fallingleaves.proxy;
 
 import com.xy.fallingleaves.init.ClientMod;
+import com.xy.fallingleaves.init.CompatWarning;
 import com.xy.fallingleaves.init.EventHandler;
 
 /**
@@ -14,5 +15,6 @@ public class ClientProxy extends CommonProxy {
         ClientMod.init();
         ClientMod.registerEventBus();
         new EventHandler();
+        CompatWarning.register();
     }
 }

@@ -13,6 +13,7 @@ Requires 1.12.2 and Forge 14.23.5.2860+. 100% client-side — safe to add to any
 - **Land, stick, and fade** — leaves settle on the first surface they hit, rest for their lifespan, then cleanly fade out.
 - **Punch a leaf, lose a leaf** — left-clicking a leaf block knocks a small burst of leaves loose.
 - **Conifer support** — spruce and other conifers use dedicated needle particles with their own spawn rate.
+- **Rain-aware** — leaves fall a little faster under an open, rainy sky.
 - **Data-driven** — per-block settings (spawn rate, conifer flag, custom leaf textures) load from `assets/<modid>/fallingleaves/` in any mod's jar, so other mods can ship their own leaf configs.
 - **Configurable** — leaf size, lifespan, spawn rate, conifer spawn rate, free space below, player-placed leaves, wind toggle, and windless dimensions. Edit `config/fallingleaves.cfg` or use the in-game config screen from the mod list.
 

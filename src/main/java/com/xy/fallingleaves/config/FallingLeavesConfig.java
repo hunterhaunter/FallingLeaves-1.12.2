@@ -32,4 +32,7 @@ public class FallingLeavesConfig {
 
     @Config.Comment("windless dimensions (by dimension name, e.g. 'the_nether', 'the_end')")
     public static String[] windlessDimension = new String[] { "the_nether", "the_end" };
+
+    @Config.Comment("show a one-time in-game notice when another mod that also adds leaf particles is detected")
+    public static boolean showCompatWarning = true;
 }
