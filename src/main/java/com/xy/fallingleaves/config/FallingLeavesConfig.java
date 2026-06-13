@@ -35,4 +35,10 @@ public class FallingLeavesConfig {
 
     @Config.Comment("show a one-time in-game notice when another mod that also adds leaf particles is detected")
     public static boolean showCompatWarning = true;
+
+    @Config.Comment({
+            "per-season leaf spawn-rate multiplier, used only when Serene Seasons is installed",
+            "order is [spring, summer, autumn, winter] - e.g. more leaves fall in autumn, fewer in winter"
+    })
+    public static double[] seasonFallRate = new double[] { 1.0, 1.0, 3.0, 0.25 };
 }

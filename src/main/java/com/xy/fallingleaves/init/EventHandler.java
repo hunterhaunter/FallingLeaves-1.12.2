@@ -39,8 +39,13 @@ public class EventHandler {
         Minecraft mc = Minecraft.getMinecraft();
         if (mc.world == null || mc.player == null || mc.isGamePaused()) return;
         Wind.tick(mc.world);
+        // Seasonal spawn multiplier (1.0 without Serene Seasons). Resolved once per tick,
+        // not per sampled block, to keep the reflection lookup off the hot loop.
+        this.seasonMultiplier = SeasonCompat.getSeasonFallMultiplier(mc.world);
         spawnLeavesAroundPlayer(mc);
     }
+
+    private double seasonMultiplier = 1.0;
 
     /**
      * Replicates vanilla {@code WorldClient.doVoidFogParticles} position sampling:
@@ -82,7 +87,7 @@ public class EventHandler {
             if (leafSettings.considerAsConifer()) modifier = FallingLeavesConfig.coniferLeafSpawnRate;
         }
         modifier = modifier / 10.0 / 75.0;
-        spawnChance *= modifier;
+        spawnChance *= modifier * this.seasonMultiplier;
         while (spawnChance > 0.0) {
             if (random.nextDouble() < spawnChance)
                 LeafUtil.trySpawnLeafParticle(state, mc.world, pos, random, leafSettings);
