@@ -102,9 +102,18 @@ public class LeafUtil {
             sprite = model.getParticleTexture();
             shouldColor = true;
         }
-        int blockColor = shouldColor
-                ? Minecraft.getMinecraft().getBlockColors().colorMultiplier(state, world, pos, 0)
-                : -1;
+        // Live biome/season tint. Serene Seasons (and similar) inject seasonal colour
+        // straight into this BlockColors pipeline, so the particle follows the season for
+        // free. Guarded so a misbehaving third-party leaf colour handler can never break
+        // particle spawning — fall back to the plain texture colour.
+        int blockColor = -1;
+        if (shouldColor) {
+            try {
+                blockColor = Minecraft.getMinecraft().getBlockColors().colorMultiplier(state, world, pos, 0);
+            } catch (Exception e) {
+                blockColor = -1;
+            }
+        }
         return calculateLeafColor(sprite, blockColor);
     }
 

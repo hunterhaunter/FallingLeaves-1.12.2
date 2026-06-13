@@ -26,7 +26,27 @@ through Forge events (`ClientTickEvent`, `TextureStitchEvent`, `PlayerInteractEv
 
 Leaf detection uses three layers — `instanceof BlockLeaves`, Forge's `isLeaves()` virtual
 method, and the `treeLeaves` OreDictionary entry — so modded leaves are picked up without any
-patches. Dynamic Trees works out of the box (its `BlockDynamicLeaves extends BlockLeaves`).
+patches.
+
+### Tested mods
+
+- **Dynamic Trees** — works out of the box. Its `BlockDynamicLeaves extends BlockLeaves`, so
+  leaves fall from dynamic trees with no extra config. (Dynamic Trees has no particle system of
+  its own, so there's nothing to double up.)
+- **Serene Seasons** — leaves recolour with the season automatically. The particle samples the
+  block's colour live each time it spawns, and Serene Seasons feeds its seasonal tint into that
+  same `BlockColors` pipeline, so a leaf that breaks off in autumn falls in autumn colours.
+- **Weather2 / Weather2 Remastered** — these add their own wind-blown foliage particles, so you
+  may see leaves doubled up. Falling Leaves shows a **one-time in-game notice** when it detects
+  them (see below); pick whichever leaf effect you prefer and turn the other off in its config.
+
+### Conflict notice
+
+When a mod that also spawns falling-leaf or foliage particles is present, Falling Leaves prints
+a single chat notice the first time you load a world (Quark-style — shown once, ever). Turn it
+off with `showCompatWarning=false` in `config/fallingleaves.cfg`. Colour mods like Serene
+Seasons are *not* flagged — they recolour leaves rather than adding particles, so they're fully
+compatible.
 
 ## License
 
