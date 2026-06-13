@@ -83,11 +83,7 @@ public class FallingLeafParticle extends Particle {
             this.motionX *= 0.95;
             this.motionZ *= 0.95;
         } else {
-            // Gravity, with Fabric's rain bonus when the leaf is exposed to a raining sky.
-            float rainBonus = (this.world.isRaining()
-                    && this.world.canSeeSky(new BlockPos(this.posX, this.posY, this.posZ)))
-                    ? 0.04f : 0.0f;
-            this.motionY -= 0.04 * (double) (this.particleGravity + rainBonus);
+            this.motionY -= 0.04 * (double) this.particleGravity;
             if (!this.onGround) {
                 this.rotateTime = Math.min(this.rotateTime + 1, this.maxRotateTime);
                 this.particleAngle += (float) this.rotateTime / (float) this.maxRotateTime * this.maxRotateSpeed;

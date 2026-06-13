@@ -10,7 +10,8 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@Mod(modid = FallingLeavesMod.MOD_ID, name = "Falling Leaves", version = "2.1.2", clientSideOnly = true)
+@Mod(modid = FallingLeavesMod.MOD_ID, name = "Falling Leaves", version = "2.1.2",
+        clientSideOnly = true, acceptableRemoteVersions = "*")
 public class FallingLeavesMod {
     public static final String MOD_ID = "fallingleaves";
     public static final Logger LOGGER = LogManager.getLogger("fallingleaves");
