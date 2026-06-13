@@ -1,0 +1,28 @@
+# Gradle / build
+.gradle/
+build/
+out/
+*.log
+
+# RFG / run
+run/
+.rfg-classpath.txt
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+bin/
+
+# Port working files (not shipped)
+reference-1201-src/
+fallingleaves-1.20.1-2.1.2/
+fallingleaves-1.20.1-2.1.2.jar
+SPEC_*.md
+INTEL_*.md
+NOTES*.md
+PORT_CONTEXT.md
+NOTES.md

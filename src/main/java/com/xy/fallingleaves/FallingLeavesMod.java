@@ -1,0 +1,31 @@
+package com.xy.fallingleaves;
+
+import com.xy.fallingleaves.proxy.CommonProxy;
+
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+@Mod(modid = FallingLeavesMod.MOD_ID, name = "Falling Leaves", version = "2.1.2", clientSideOnly = true)
+public class FallingLeavesMod {
+    public static final String MOD_ID = "fallingleaves";
+    public static final Logger LOGGER = LogManager.getLogger("fallingleaves");
+
+    @SidedProxy(clientSide = "com.xy.fallingleaves.proxy.ClientProxy",
+                serverSide = "com.xy.fallingleaves.proxy.CommonProxy")
+    public static CommonProxy proxy;
+
+    @Mod.EventHandler
+    public void preInit(FMLPreInitializationEvent event) {
+        proxy.preInit();
+    }
+
+    @Mod.EventHandler
+    public void init(FMLInitializationEvent event) {
+        proxy.init();
+    }
+}
