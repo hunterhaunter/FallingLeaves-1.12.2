@@ -4,7 +4,7 @@ A 1.12.2 backport of [Falling Leaves](https://www.curseforge.com/minecraft/mc-mo
 
 A neat little particle effect for leaf blocks: leaves gently break off the underside of the canopy, drift down on the wind, tumble as they fall, settle on the ground, and fade away. Each particle is tinted to match the actual leaf texture and biome colour, so birch, oak, spruce, jungle and modded leaves all drop the right shade.
 
-Requires 1.12.2 and Forge 14.23.5.2860+. 100% client-side — safe to add to any server's client, no server install needed.
+Requires Forge 14.23.5.2860+. 100% client-side.
 
 ## Features
 
